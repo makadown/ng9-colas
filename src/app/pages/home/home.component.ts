@@ -13,6 +13,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Este método lo que hace es emitir creacion de nuevo escritorio al backend
+   * @param numero 
+   */
   entrar(numero: number) {
     if (!numero) {return;}
     this.router.navigate(['/escritorio', numero]);
