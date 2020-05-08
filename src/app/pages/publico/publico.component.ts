@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-publico',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private socketService: WebsocketService) { }
 
   ngOnInit(): void {
    /*  const body = document.getElementsByTagName('body')[0];
