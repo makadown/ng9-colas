@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { ColaService } from 'src/app/services/colas.service';
 
 @Component({
   selector: 'app-publico',
@@ -8,11 +9,12 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class PublicoComponent implements OnInit {
 
-  constructor(private socketService: WebsocketService) { }
+  constructor(private socketService: WebsocketService,
+    private colaService: ColaService) { }
 
   ngOnInit(): void {
-   /*  const body = document.getElementsByTagName('body')[0];
-    body.classList.remove('container'); */
+    /*  const body = document.getElementsByTagName('body')[0];
+     body.classList.remove('container'); */
   }
 
 }

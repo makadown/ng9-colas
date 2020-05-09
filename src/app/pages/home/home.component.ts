@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { ColaService } from 'src/app/services/colas.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private socketService: WebsocketService) { }
+  constructor(private router: Router, private socketService: WebsocketService,
+    private colaService: ColaService) { }
 
   ngOnInit(): void {
   }

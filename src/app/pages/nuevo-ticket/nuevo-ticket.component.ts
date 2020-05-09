@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from 'src/app/services/websocket.service';
+import { ColaService } from 'src/app/services/colas.service';
 
 @Component({
   selector: 'app-nuevo-ticket',
@@ -8,7 +9,8 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class NuevoTicketComponent implements OnInit {
 
-  constructor(private socketService: WebsocketService) { }
+  constructor(private socketService: WebsocketService,
+    private colaService: ColaService) { }
 
   ngOnInit(): void {
   }
