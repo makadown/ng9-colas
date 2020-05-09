@@ -2,31 +2,47 @@
     <tr>
         <!-- Aquí escuchar cada que un escritorio emita atencion de ticket -->
         <td valign="middle" class="ticket-actual">
-            <span id="lblTicket1" class="ticket-actual-numero">Ticket W</span>
+            <span id="lblTicket1" class="ticket-actual-numero">
+                Ticket {{ cola[0].id.length === 0 ? '-' : cola[0].ticket.numero }}
+            </span>
             <br>
-            <span id="lblEscritorio1" class="ticket-actual-escritorio">Escritorio W</span>
+            <span id="lblEscritorio1" class="ticket-actual-escritorio">
+                Escritorio {{ cola[0].id.length === 0 ? '-' : cola[0].escritorio.numero }}
+            </span>
         </td>
         <td>
             <table>
                 <tr>
                     <td>
-                        <span id="lblTicket2" class="ticket-secundario">Ticket X</span>
+                        <span id="lblTicket2" class="ticket-secundario">
+                            Ticket {{ cola[1].id.length === 0 ? '-' : cola[1].ticket.numero }}
+                        </span>
                         <br>
-                        <span id="lblEscritorio2">Escritorio X</span>
+                        <span id="lblEscritorio2">
+                            Escritorio {{ cola[1].id.length === 0 ? '-' : cola[1].escritorio.numero }}
+                        </span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span id="lblTicket3" class="ticket-secundario">Ticket Y</span>
+                        <span id="lblTicket3" class="ticket-secundario">
+                            Ticket {{ cola[2].id.length === 0 ? '-' : cola[2].ticket.numero }}
+                        </span>
                         <br>
-                        <span id="lblEscritorio3">Escritorio Y</span>
+                        <span id="lblEscritorio3">
+                            Escritorio {{ cola[2].id.length === 0 ? '-' : cola[2].escritorio.numero }}
+                        </span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span id="lblTicket4" class="ticket-secundario">Ticket Z</span>
+                        <span id="lblTicket4" class="ticket-secundario">
+                            Ticket {{ cola[3].id.length === 0 ? '-' : cola[3].ticket.numero }}
+                        </span>
                         <br>
-                        <span id="lblEscritorio4">Escritorio Z</span>
+                        <span id="lblEscritorio4">
+                            Escritorio {{ cola[3].id.length === 0 ? '-' : cola[3].escritorio.numero }}
+                        </span>
                     </td>
                 </tr>
             </table>

@@ -3,19 +3,20 @@
     <table>
         <tr>
             <td>
-            <!-- TODO 01:  Al entrar aquí debe hacer una peticion al backend para 
+            <!-- Al entrar aquí debe hacer una peticion al backend para 
             saber si hay escritorios activos. De lo contrario permanecer asi y escuchar
             el socket hasta que un entre -->
                 <span id="lblNuevoTicket">
-                    Cargando...
+                    {{ tickets.length === 0 ? 'Espere' : tickets[tickets.length - 1].numero }}
                 </span>
             </td>
         </tr>
         <tr>
             <td>
-                <!-- TODO: No dejar generar nuevo ticket hasta que se haya detectado que 
+                <!-- No deja generar nuevo ticket hasta que se haya detectado que 
                 un escritorio ha ingresado para esperar tickets -->
-                <button class="btn btn-secondary btn-lg">
+                <button class="btn btn-secondary btn-lg" (click)="crearTicket()"
+                 *ngIf="escritorios.length > 0">
                     Generar nuevo ticket
                 </button>
             </td>

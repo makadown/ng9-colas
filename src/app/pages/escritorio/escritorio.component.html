@@ -1,19 +1,25 @@
 <div class="container">
-    <h1>Escritorio</h1>
-    <!-- Al entrar aquí, ya se emitió antes la creacion de este escritorio, asi que aquí, al entrar
+    <div class="card">
+       
+        <div class="card-body">
+          <h5 class="card-title">{{titulo}}</h5>
+          <h4 *ngIf="ticketActivo">Atendiendo a <small> {{ ticketActivo?.numero }} </small></h4>
+             <!-- Al entrar aquí, ya se emitió antes la creacion de este escritorio, asi que aquí, al entrar
     de inmediato hace una peticion al backend para buscar los numeros creados, 
     si no encuentra numeros creados, creo que deberia mandar un mensaje de "esperando" o
     "no hay tickets creados", si los encuentra deberia mostrar una lista de tickets esperando a 
     ser atendidos (ej. "tickets en cola: 3")-->
-    <h4>Atendiendo a <small>....</small></h4>
-    <hr>
-    <!-- Este boton debe estar deshabilitado si al buscar al backend no encuentra numeros de ticket
+          <p class="card-text">Tickets en espera: {{tickets.length}}.</p>
+           <!-- Este boton debe estar deshabilitado si al buscar al backend no encuentra numeros de ticket
     creados, mientras que escucha con un socket cada que se haya generado un ticket.
 Al presionar este boton, debe emitir al backend para limpiar el numero 
      - emitir a los demas escritorios para que no aparezcan ya disponibles
      - emitir a 'publico' informando esta atención.
  -->
-    <button class="btn btn-primary btn-lg">
-        Atender siguiente ticket
-    </button>
+          <button class="btn btn-primary btn-lg" *ngIf="tickets.length > 0" (click)="atenderSiguienteTicket()">
+            Atender siguiente ticket.
+        </button>
+        </div>
+      </div>
+    
 </div>

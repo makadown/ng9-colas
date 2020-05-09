@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { ColaService } from 'src/app/services/colas.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,10 @@ import { ColaService } from 'src/app/services/colas.service';
 export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private socketService: WebsocketService,
-    private colaService: ColaService) { }
+    private colaService: ColaService, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Pantalla principal - sistema de colas');
   }
 
   /**
